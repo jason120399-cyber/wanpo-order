@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-HK">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🧋 萬波落單表 - QR掃描即用</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>再睡五分鐘｜春日漫遊祭落單表</title>
   <style>
     :root{
       --bg:#f6f7fb;
@@ -11,10 +11,8 @@
       --line:#d9deea;
       --text:#1f2937;
       --muted:#6b7280;
-      --primary:#b91c1c; 
+      --primary:#b91c1c;
       --primary-2:#fee2e2;
-      --danger:#dc2626;
-      --danger-2:#fee2e2;
       --ok:#16a34a;
       --ok-2:#dcfce7;
       --shadow:0 8px 24px rgba(0,0,0,.08);
@@ -26,53 +24,51 @@
       font-family:Arial,"Microsoft JhengHei","PingFang TC",sans-serif;
       background:var(--bg);
       color:var(--text);
-      padding-bottom:20px;
     }
-    .wrap{max-width:800px;margin:0 auto;padding:24px;}
+    .wrap{max-width:900px;margin:0 auto;padding:24px;}
     h1,h2,h3{margin:0 0 12px}
-    .top{margin-bottom:20px;text-align:center;}
-    .sub{color:var(--muted);font-size:14px;line-height:1.5;}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;}
-    .section{margin-bottom:24px;}
-    .label{display:block;margin-bottom:8px;font-size:14px;color:var(--muted);font-weight:700;}
-    .category-title{font-size:16px;color:var(--primary);margin:24px 0 10px 0;border-bottom:2px solid var(--primary-2);padding-bottom:4px;font-weight:700;display:flex;align-items:center;gap:6px;}
-    .category-title:first-child{margin-top:0;}
-    .drink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;}
-    .drink{border:2px solid var(--line);background:#fff;border-radius:10px;padding:12px 10px;cursor:pointer;text-align:center;transition:.15s;color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:58px;font-size:14px;}
-    .drink:hover{border-color:var(--primary-2);transform:translateY(-1px);}
-    .drink.active{border-color:var(--primary);background:var(--primary-2);color:var(--primary);}
-    .drink-name{font-weight:600;margin-bottom:2px;font-size:14px;}
-    .drink-price{font-size:12px;color:var(--muted);}
-    .drink.active .drink-price{color:var(--primary);opacity:0.8;}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;}
-    .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;cursor:pointer;font-size:14px;transition:.15s;flex:0;}
-    .chip:hover{border-color:var(--primary-2);}
-    .chip.active{background:var(--primary-2);border-color:var(--primary);color:var(--primary);font-weight:700;}
-    .chip.multi.active{background:var(--ok-2);border-color:var(--ok);color:var(--ok);}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;transition:.2s;}
-    input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-2);}
-    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
-    button.btn{border:none;border-radius:12px;padding:14px 24px;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;flex:1;min-width:120px;}
-    .btn.primary{background:var(--primary);color:#fff;}
-    .btn.primary:hover{background:#991b1b;}
-    .btn.primary:disabled{background:#fca5a5;cursor:not-allowed;}
-    .btn.gray{background:#eef2f7;color:#111827;}
-    .btn.gray:hover{background:#e5e7eb;}
-    .success-msg{display:none;background:var(--ok-2);border:2px solid var(--ok);border-radius:12px;padding:16px;margin:20px 0;color:var(--ok);font-weight:600;text-align:center;}
-    @media (max-width:600px){.form-row,.wrap{padding:12px}.card{padding:16px}.drink-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr));}.drink{font-size:12px;}.drink-name{font-size:13px;}.drink-price{font-size:11px;}}
+    .top{margin-bottom:20px}
+    .sub{color:var(--muted);font-size:14px;line-height:1.6}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .section{margin-bottom:24px}
+    .section:last-child{margin-bottom:0}
+    .label{display:block;margin-bottom:8px;font-size:14px;color:var(--muted);font-weight:700}
+    .category-title{font-size:16px;color:var(--primary);margin:24px 0 10px;border-bottom:2px solid var(--primary-2);padding-bottom:4px;font-weight:700;display:flex;align-items:center;gap:6px}
+    .category-title:first-child{margin-top:0}
+    .drink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+    .drink{border:2px solid var(--line);background:#fff;border-radius:10px;padding:12px 10px;cursor:pointer;text-align:center;transition:.15s;color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:58px}
+    .drink:hover{border-color:var(--primary-2);transform:translateY(-1px)}
+    .drink.active{border-color:var(--primary);background:var(--primary-2);color:var(--primary)}
+    .drink-name{font-weight:600;font-size:14px;margin-bottom:2px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 14px;cursor:pointer;font-size:14px;transition:.15s}
+    .chip:hover{border-color:var(--primary-2)}
+    .chip.active{background:var(--primary-2);border-color:var(--primary);color:var(--primary);font-weight:700}
+    .chip.multi.active{background:var(--ok-2);border-color:var(--ok);color:var(--ok)}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;transition:.2s}
+    input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-2)}
+    .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+    button.btn{border:none;border-radius:12px;padding:14px 24px;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;flex:1;min-width:120px}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.primary:hover{background:#991b1b}
+    .btn.primary:disabled{background:#fca5a5;cursor:not-allowed}
+    .btn.gray{background:#eef2f7;color:#111827}
+    .btn.gray:hover{background:#e5e7eb}
+    .success-msg{display:none;background:var(--ok-2);border:2px solid var(--ok);border-radius:12px;padding:16px;margin:20px 0;color:var(--ok);font-weight:600;text-align:center}
+    @media (max-width:600px){.wrap{padding:12px}.card{padding:16px}.row2{grid-template-columns:1fr}.drink-grid{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.drink-name{font-size:13px}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="top">
-      <h1>🧋 萬波 Wanpo 落單表</h1>
-      <div class="sub">請揀選飲品並填寫名稱，掃描 QR 即用！</div>
+      <h1>🧋 再睡五分鐘｜春日漫遊祭落單表</h1>
+      <div class="sub">請揀選飲品並填寫名稱，適合 QR Code 直接落單使用。</div>
     </div>
 
     <div class="card">
-      <div class="success-msg" id="successMsg">✅ 落單成功！已傳送到總表，請耐心等候。</div>
-      
+      <div class="success-msg" id="successMsg">✅ 落單成功！已傳送到總表。</div>
+
       <form id="orderForm">
         <div class="section">
           <h2>1. 揀飲品</h2>
@@ -83,23 +79,20 @@
           <h2>2. 份量、甜度、冰量、加料</h2>
           <label class="label">🥤 份量</label>
           <div id="sizeChips" class="chips"></div>
-
           <div style="height:16px"></div>
           <label class="label">🍯 甜度</label>
           <div id="sugarChips" class="chips"></div>
-
           <div style="height:16px"></div>
           <label class="label">🧊 冰量</label>
           <div id="iceChips" class="chips"></div>
-
           <div style="height:16px"></div>
           <label class="label">✨ 加料（可多選）</label>
           <div id="toppingChips" class="chips"></div>
         </div>
 
-        <div class="section form-row">
+        <div class="section row2">
           <div>
-            <label class="label">👤 你的名稱 <span style="color:var(--danger)">*</span></label>
+            <label class="label">👤 你的名稱</label>
             <input id="nameInput" name="name" placeholder="例如：Ming" required>
           </div>
           <div>
@@ -117,33 +110,61 @@
   </div>
 
   <script>
-    // 萬波完整菜單
     const menu = [
-      {category: "🌟 期間限定", drinks: [{name: "米麻糬草莓歐蕾", price: "$56.5"}, {name: "白柚麗雅", price: "$43"}, {name: "奶油青提 大杯", price: "$56.5"}, {name: "萬事大桔", price: "$38"}]},
-      {category: "🥛 醇濃奶香", drinks: [{name: "波霸奶茶", price: "$38"}, {name: "鐵觀音奶茶", price: "$33"}, {name: "萬波奶茶", price: "$33"}]},
-      {category: "🐄 鮮奶茶", drinks: [{name: "蘭葉那堤", price: "$38"}, {name: "黑糖珍珠布蕾鮮奶", price: "$46"}, {name: "黑糖珍珠鮮奶", price: "$46"}, {name: "茉莉那堤", price: "$38"}]},
-      {category: "🍋 鮮萃果香", drinks: [{name: "島嶼檸檬茶王", price: "$36"}, {name: "大青梅果綠", price: "$36"}, {name: "紅蘋島嶼", price: "$38"}, {name: "蜜柑烏龍", price: "$42"}]},
-      {category: "🍹 手路調飲", drinks: [{name: "多多綠茶", price: "$32"}, {name: "金牌愛玉檸檬", price: "$40"}, {name: "金萱珍波粉", price: "$40"}, {name: "楊枝甘露（含芋圓）", price: "$60"}]},
-      {category: "🍵 品茗精選", drinks: [{name: "宣橘綠茶", price: "$25"}, {name: "烏龍鐵觀音", price: "$25"}, {name: "島嶼紅茶", price: "$25"}, {name: "金萱青茶", price: "$25"}, {name: "麗雅烏龍", price: "$25"}]},
-      {category: "🧀 芝 Cheese Cream", drinks: [{name: "草莓芝士牛奶", price: "$56"}, {name: "草莓芝士綠茶", price: "$56"}, {name: "香草籽布蕾那堤", price: "$48"}, {name: "香草籽布蕾奶茶", price: "$43"}, {name: "香草籽布蕾原茶", price: "$38"}]},
-      {category: "👴 永良老頭家", drinks: [{name: "珍玉冬瓜露", price: "$38"}, {name: "永良冬瓜露", price: "$24"}, {name: "冬瓜鮮奶", price: "$38"}, {name: "冬瓜檸檬", price: "$30"}]},
-      {category: "🍠 芋頭系列", drinks: [{name: "米麻糬芋泥奶茶", price: "$53"}, {name: "芋泥奶茶", price: "$48"}, {name: "波霸芋泥奶茶", price: "$50"}, {name: "芋頭芋圓鮮奶", price: "$55"}, {name: "芋芋三混圓", price: "$55"}]}
+      { category: "🌸 春日漫遊祭", drinks: [
+        { name: "四季桃氣" },
+        { name: "伯爵棉被日安紅" }
+      ]},
+      { category: "☕ 0咖啡因／慢焙蕎麥系列", drinks: [
+        { name: "慢焙蕎麥" },
+        { name: "棉被慢焙蕎麥" },
+        { name: "慢焙蕎麥燕麥歐蕾" }
+      ]},
+      { category: "🧣 棉被厚奶蓋", drinks: [
+        { name: "棉被四季金萱" },
+        { name: "棉被午茶綠" },
+        { name: "棉被日安紅" },
+        { name: "日安紅厚奶歐蕾" }
+      ]},
+      { category: "🥛 躺著喝歐蕾", drinks: [
+        { name: "日安紅厚奶歐蕾" },
+        { name: "午茶綠歐蕾" },
+        { name: "深焙烏龍歐蕾" }
+      ]},
+      { category: "🍃 簡單喝原茶", drinks: [
+        { name: "四季金萱" },
+        { name: "午茶綠" },
+        { name: "日安紅" }
+      ]},
+      { category: "🍋 輕鬆喝特調", drinks: [
+        { name: "芭檸年代" },
+        { name: "凍香檸（午茶綠）" },
+        { name: "凍香檸（四季金萱）" },
+        { name: "凍香檸（日安紅）" },
+        { name: "柚紅柚綠" },
+        { name: "黑糖珍珠好濃鮮奶" }
+      ]},
+      { category: "🔥 暖暖喝熱飲", drinks: [
+        { name: "午茉綠燕麥歐蕾" },
+        { name: "日安紅燕麥歐蕾" },
+        { name: "黑糖珍珠好濃鮮奶" },
+        { name: "深焙烏龍歐蕾" },
+        { name: "午茉綠歐蕾" },
+        { name: "日安紅厚奶歐蕾" }
+      ]},
+      { category: "🌾 躺著喝燕麥歐蕾", drinks: [
+        { name: "千茶綠燕麥歐蕾" },
+        { name: "日安紅燕麥歐蕾" }
+      ]}
     ];
 
     const sizeOptions = ["中杯", "大杯"];
     const sugarOptions = ["正常甜", "少甜", "半甜", "微甜", "無糖"];
     const iceOptions = ["正常冰", "少冰", "微冰", "去冰", "溫", "熱"];
-    const toppingOptions = ["黑波霸 +$6", "黑糖波霸 +$7", "小芋圓 +$7", "粉粿 +$6", "小珍珠 +$6"];
+    const toppingOptions = ["珍珠", "咕嚕茶凍", "椰果", "無"];
 
-    let currentState = {
-      drinkName: "",
-      size: "",
-      sugar: "",
-      ice: "",
-      toppings: []
-    };
+    let current = { drinkName: "", size: "", sugar: "", ice: "", toppings: [] };
 
-    // 渲染飲品選單
     function renderMenu() {
       const container = document.getElementById("menuContainer");
       container.innerHTML = "";
@@ -155,139 +176,130 @@
 
         const grid = document.createElement("div");
         grid.className = "drink-grid";
+
         cat.drinks.forEach(d => {
           const btn = document.createElement("button");
-          btn.className = `drink ${currentState.drinkName === d.name ? "active" : ""}`;
-          btn.setAttribute("aria-pressed", currentState.drinkName === d.name);
-          btn.innerHTML = `<div class="drink-name">${d.name}</div><div class="drink-price">${d.price} 起</div>`;
+          btn.type = "button";
+          btn.className = "drink" + (current.drinkName === d.name ? " active" : "");
+          btn.innerHTML = `<div class="drink-name">${d.name}</div>`;
           btn.onclick = () => {
-            currentState.drinkName = d.name;
+            current.drinkName = d.name;
             renderMenu();
           };
           grid.appendChild(btn);
         });
+
         container.appendChild(grid);
       });
     }
 
-    // 單選 chips
     function renderSingleChoice(containerId, options, key) {
       const box = document.getElementById(containerId);
       box.innerHTML = "";
       options.forEach(v => {
         const el = document.createElement("button");
-        el.className = `chip ${currentState[key] === v ? "active" : ""}`;
-        el.setAttribute("type", "button");
-        el.setAttribute("aria-pressed", currentState[key] === v);
+        el.type = "button";
+        el.className = "chip" + (current[key] === v ? " active" : "");
         el.textContent = v;
         el.onclick = () => {
-          currentState[key] = v;
+          current[key] = v;
           renderSingleChoice(containerId, options, key);
         };
         box.appendChild(el);
       });
     }
 
-    // 多選加料
-    function renderToppings() {
+    function renderMultiChoice() {
       const box = document.getElementById("toppingChips");
       box.innerHTML = "";
       toppingOptions.forEach(v => {
         const el = document.createElement("button");
-        el.className = `chip multi ${currentState.toppings.includes(v) ? "active" : ""}`;
-        el.setAttribute("type", "button");
+        el.type = "button";
+        el.className = "chip multi" + (current.toppings.includes(v) ? " active" : "");
         el.textContent = v;
         el.onclick = () => {
-          if (currentState.toppings.includes(v)) {
-            currentState.toppings = currentState.toppings.filter(x => x !== v);
+          if (v === "無") {
+            current.toppings = ["無"];
           } else {
-            currentState.toppings.push(v);
+            current.toppings = current.toppings.filter(x => x !== "無");
+            if (current.toppings.includes(v)) {
+              current.toppings = current.toppings.filter(x => x !== v);
+            } else {
+              current.toppings.push(v);
+            }
           }
-          renderToppings();
+          renderMultiChoice();
         };
         box.appendChild(el);
       });
     }
 
-    // 送單
-    async function submitOrder(formData) {
-      const name = formData.get("name").trim();
-      const remark = formData.get("remark").trim();
+    function resetForm() {
+      current = { drinkName: "", size: "", sugar: "", ice: "", toppings: [] };
+      document.getElementById("nameInput").value = "";
+      document.getElementById("remarkInput").value = "";
+      document.getElementById("successMsg").style.display = "none";
+      renderMenu();
+      renderSingleChoice("sizeChips", sizeOptions, "size");
+      renderSingleChoice("sugarChips", sugarOptions, "sugar");
+      renderSingleChoice("iceChips", iceOptions, "ice");
+      renderMultiChoice();
+    }
 
-      if (!currentState.drinkName) return alert("⚠️ 請揀選飲品");
-      if (!currentState.size) return alert("⚠️ 請揀選份量");
-      if (!currentState.sugar) return alert("⚠️ 請揀選甜度");
-      if (!currentState.ice) return alert("⚠️ 請揀選冰量");
+    async function submitOrder() {
+      const name = document.getElementById("nameInput").value.trim();
+      const remark = document.getElementById("remarkInput").value.trim();
+      if (!name) return alert("⚠️ 請填寫你的名稱");
+      if (!current.drinkName) return alert("⚠️ 請揀選飲品");
+      if (!current.size) return alert("⚠️ 請揀選份量");
+      if (!current.sugar) return alert("⚠️ 請揀選甜度");
+      if (!current.ice) return alert("⚠️ 請揀選冰量");
 
       const order = {
         name,
-        drink: `${currentState.drinkName} (${currentState.size})`,
-        sugar: currentState.sugar,
-        ice: currentState.ice,
-        toppings: currentState.toppings.length ? currentState.toppings.join(" + ") : "無",
+        drink: `${current.drinkName} (${current.size})`,
+        sugar: current.sugar,
+        ice: current.ice,
+        toppings: current.toppings.length ? current.toppings.join(" + ") : "無",
         remark: remark || "無"
       };
 
       const btn = document.getElementById("submitBtn");
       const successMsg = document.getElementById("successMsg");
-      
-      btn.innerHTML = "⏳ 傳送中...";
       btn.disabled = true;
+      btn.textContent = "⏳ 傳送中...";
 
       try {
-        // 你嘅 Google Apps Script URL
-        const GAS_URL = "https://script.google.com/macros/s/AKfycbxQzFZ2LyrpuRSXNx3bZPYrGy_-SuaMox0fVqZvK0ddEKFgAaG-9hDQdM6D9_nwHMrhAQ/exec";
-        
-        await fetch(GAS_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
+        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbxQzFZ2LyrpuRSXNx3bZPYrGy_-SuaMox0fVqZvK0ddEKFgAaG-9hDQdM6D9_nwHMrhAQ/exec";
+        await fetch(GOOGLE_APP_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(order)
         });
-
-        // no-cors 限制：假設成功（實際上無法確認）
         successMsg.style.display = "block";
-        document.getElementById("orderForm").scrollIntoView({behavior: "smooth"});
         document.getElementById("orderForm").reset();
         resetForm();
-        
-        setTimeout(() => {
-          successMsg.style.display = "none";
-        }, 5000);
-        
+        setTimeout(() => successMsg.style.display = "none", 5000);
       } catch (err) {
-        alert("❌ 連線失敗，請檢查網絡或通知負責同事");
+        alert("❌ 連線失敗，請檢查網絡連線或通知負責同事。");
       } finally {
-        btn.innerHTML = "✅ 確認落單";
         btn.disabled = false;
+        btn.textContent = "✅ 確認落單";
       }
     }
 
-    // 重置
-    function resetForm() {
-      currentState = { drinkName: "", size: "", sugar: "", ice: "", toppings: [] };
-      renderMenu();
-      renderSingleChoice("sizeChips", sizeOptions, "size");
-      renderSingleChoice("sugarChips", sugarOptions, "sugar");
-      renderSingleChoice("iceChips", iceOptions, "ice");
-      renderToppings();
-    }
-
-    // 事件綁定
     document.getElementById("orderForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(e.target);
-      await submitOrder(formData);
+      await submitOrder();
     });
-
     document.getElementById("orderForm").addEventListener("reset", resetForm);
 
-    // 初始化
     renderMenu();
     renderSingleChoice("sizeChips", sizeOptions, "size");
     renderSingleChoice("sugarChips", sugarOptions, "sugar");
     renderSingleChoice("iceChips", iceOptions, "ice");
-    renderToppings();
+    renderMultiChoice();
   </script>
 </body>
 </html>
